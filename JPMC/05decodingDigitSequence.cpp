@@ -14,7 +14,7 @@ int countDecoding(char *digits, int n)
     if (digits[n - 1] > '0')
     {
         count = countDecoding(digits, n - 1);
-        cout << "(n-1) if: " << count << endl;
+        // cout << "(n-1) if: " << count << endl;
     }
     // If the last two digits form a number smaller
     // than or equal to 26, then consider
@@ -22,7 +22,7 @@ int countDecoding(char *digits, int n)
     if (digits[n - 2] == '1' || (digits[n - 2] == '2' && digits[n - 1] < '7'))
     {
         count += countDecoding(digits, n - 2);
-        cout << "(n-2) if: " << count << endl;
+        // cout << "(n-2) if: " << count << endl;
     }
 
     return count;

@@ -22,7 +22,7 @@ void findNext(char digit[], int n)
         return;
     }
     int x = digit[i - 1], smallest = i;
-    cout << "X: " << x << ' ' << "Smallest=i: " << smallest << endl;
+    // cout << "X: " << x << ' ' << "Smallest=i: " << smallest << endl;
     for (j = i + 1; j < n; j++)
     {
         if (digit[smallest] > digit[j] && digit[j] > x)
