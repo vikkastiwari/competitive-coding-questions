@@ -13,3 +13,5 @@
 #### 07 - https://www.geeksforgeeks.org/reverse-and-add-function/
 
 #### 08 - https://www.geeksforgeeks.org/find-winner-election-votes-represented-candidate-names/
+
+#### 09 - https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
