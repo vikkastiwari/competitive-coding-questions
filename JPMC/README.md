@@ -15,3 +15,5 @@
 #### 08 - https://www.geeksforgeeks.org/find-winner-election-votes-represented-candidate-names/
 
 #### 09 - https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
+
+#### 10 - https://www.geeksforgeeks.org/weighted-job-scheduling/
