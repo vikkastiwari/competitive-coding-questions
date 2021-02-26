@@ -10,6 +10,7 @@ Language used: c/c++.
 2. Write comments so that other students can understand what is being done in the code.
 
 ### What you can contribute
-1. Interview questions from companies
+1. Interview coding questions from companies
 2. Optimized complexities of problems using 'Dynamic Programming' approach
-3. And more ..
+3. Good questions of DSA
+4. And more ..
