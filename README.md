@@ -7,7 +7,7 @@ Language used: c/c++.
 
 ### Conditions for contributions
 1. Make sure you test all the edge test cases before making a Pull Request :)
-2. Write comments so that other students can understand what is being done in the code.
+2. Write readable code using comments.
 
 ### What you can contribute
 1. Interview coding questions from companies
