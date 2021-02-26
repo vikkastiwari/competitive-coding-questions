@@ -19,3 +19,5 @@
 #### 10 - https://www.geeksforgeeks.org/weighted-job-scheduling/
 
 #### 11 - https://www.geeksforgeeks.org/sum-numbers-formed-root-leaf-paths/
+
+#### 12 - https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/
