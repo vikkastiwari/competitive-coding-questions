@@ -22,4 +22,10 @@
 
 #### 12 - https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/
 
+<<<<<<< HEAD
 #### 13 - https://www.geeksforgeeks.org/find-whether-path-two-cells-matrix/
+=======
+#### 13 - https://leetcode.com/problems/merge-intervals/
+
+#### 14 - https://leetcode.com/problems/count-binary-substrings/
+>>>>>>> be25d83808cd569de6b31ccf69bc81849acd87d0
