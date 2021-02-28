@@ -21,3 +21,7 @@
 #### 11 - https://www.geeksforgeeks.org/sum-numbers-formed-root-leaf-paths/
 
 #### 12 - https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/
+
+#### 13 - https://leetcode.com/problems/merge-intervals/
+
+#### 14 - https://leetcode.com/problems/count-binary-substrings/
