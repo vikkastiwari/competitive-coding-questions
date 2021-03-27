@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-Language used: c/c++.
+Language used: C/C++, Python.
 
 ## Contributions
 * This repository is open for contributions. so, if there is anything that adds value to this repository then your contributions are welcome.
