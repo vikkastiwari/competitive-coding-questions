@@ -5,7 +5,7 @@ def encrypt_sentence(sentence):
     vowels = "AaEeIiOoUu"
     l = sentence.split()
     for index, word in enumerate(l):
-        if(index % 2 != 0):
+        if(index % 2 == 0):
             rev.append(word[::-1])
         else:
             vow = ""
