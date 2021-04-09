@@ -1,4 +1,4 @@
-.vscode/
+*.vscode/
 settings.json
 
 # Prerequisites
@@ -33,3 +33,6 @@ settings.json
 *.exe
 *.out
 *.app
+
+**/DSA/
+**/big-o-cs/
