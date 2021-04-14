@@ -1,5 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
+# Abstract classes should not be instantiated.
+
 
 class Product(metaclass=ABCMeta):
     @abstractmethod
