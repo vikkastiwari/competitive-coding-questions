@@ -66,13 +66,13 @@ class Student:
         return self.__age
 
 
-s1 = Student()
-s1.set_student_id(1004)
-s1.set_age(21)
-s1.set_marks(65)
-if(s1.check_qualification()):
+maddy = Student()
+maddy.set_student_id(1004)
+maddy.set_age(21)
+maddy.set_marks(65)
+if(maddy.check_qualification()):
     print("Student has qualified")
-    if(s1.choose_course(1002)):
+    if(maddy.choose_course(1002)):
         print("Course allocated")
     else:
         print("Invalid course id")
