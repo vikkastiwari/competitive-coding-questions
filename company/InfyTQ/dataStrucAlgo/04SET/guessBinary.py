@@ -6,7 +6,7 @@ def find_it(num, element_list):
     # Remove pass and write the logic to search num in element_list using binary search algorithm
     # Return the total number of guesses made
     low = 0
-    high = max(element_list)
+    high = len(element_list)
     mid = 0
     guess = 0
 
