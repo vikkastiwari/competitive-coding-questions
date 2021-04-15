@@ -1,5 +1,3 @@
-# lex_auth_012742584360976384939
-
 class Stack:
     def __init__(self, max_size):
         self.__max_size = max_size
@@ -8,6 +6,9 @@ class Stack:
 
     def get_max_size(self):
         return self.__max_size
+
+    def get_top(self):
+        return self.__top
 
     def is_full(self):
         if(self.__top == self.__max_size-1):
@@ -57,7 +58,19 @@ class Stack:
 
 def find_average(num_list):
     # write your logic here
+    max1 = num_list.get_max_size()
+    sum1 = 0
+    l = []
+    while(not num_list.is_empty()):
+        l.append(num_list.pop())
 
+    for each in l:
+        sum1 = sum1 + each
+    avg = sum1 / (max1-1)
+
+    for each in l[::-1]:
+        num_list.push(each)
+    num_list.push(avg)
     return num_list
 
 
