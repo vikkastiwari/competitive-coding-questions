@@ -78,114 +78,88 @@ public:
         }
     }
 
-    // int deleteNode(int data)
-    // {
-    //     if (root == NULL)
-    //     {
-    //         cout << "[WARNING]Tree is empty." << endl;
-    //         return;
-    //     }
-
-    //     // pointer for traversing data if present
-    //     Node *temp = root; // currentNode
-    //     // trailing pointer that points to the parent node(intermediate nodes)
-    //     Node *parent = NULL;
-
-    //     while (temp)
-    //     {
-    //         if (data < temp->data)
-    //         {
-    //             parent = temp;
-    //             temp = temp->left;
-    //         }
-    //         else if (data > temp->data)
-    //         {
-    //             parent = temp;
-    //             temp = temp->right;
-    //         }
-    //         else if (temp->data == data)
-    //         { //We have a match, get to work!
-
-    //             //Option 1: No right child:
-    //             if (temp->right == NULL)
-    //             {
-    //                 if (parent == NULL)
-    //                 {
-    //                     root = temp->left;
-    //                 }
-    //                 else
-    //                 {
-    //                     //if parent > current value, make current left child a child of parentif (temp->data < parent->data)
-    //                     {
-    //                         parent->left = temp->left;
-    //                     }
-    //                     //if parent < current value, make left child a right child of parent
-    //                     else if (temp->data > parent->data)
-    //                     {
-    //                         parent->right = temp->left;
-    //                     }
-    //                 }
-    //             }
-    //             //Option 2: Right child which doesnt have a left child
-    //             else if (temp->right->left == NULL)
-    //             {
-    //                 temp->right->left = temp->left;
-    //                 if (parent == NULL)
-    //                 {
-    //                     root = temp->right;
-    //                 }
-    //                 else
-    //                 {
-    //                     //if parent > current, make right child of the left the parent
-    //                     if (temp->data < parent->data)
-    //                     {
-    //                         parent->left = temp->right;
-    //                         //if parent < current, make right child a right child of the parent
-    //                     }
-    //                     else if (temp->data > parent->data)
-    //                     {
-    //                         parent->right = temp->right;
-    //                     }
-    //                 }
-    //             }
-    //             //Option 3: Right child that has a left child
-    //             else
-    //             {
-    //                 //find the Right child's left most child
-    //                 Node *leftmost = temp->right->left;
-    //                 Node *leftmostParent = temp->right;
-    //                 while (leftmost->left != NULL)
-    //                 {
-    //                     leftmostParent = leftmost;
-    //                     leftmost = leftmost->left;
-    //                 }
-
-    //                 //Parent's left subtree is now leftmost's right subtree
-    //                 leftmostParent->left = leftmost->right;
-    //                 leftmost->left = temp->left;
-    //                 leftmostParent->right = temp->right;
-
-    //                 if (parent == NULL)
-    //                 {
-    //                     root = leftmost;
-    //                 }
-    //                 else
-    //                 {
-    //                     if (temp->data < parent->data)
-    //                     {
-    //                         parent->left = leftmost;
-    //                     }
-    //                     else if (temp->data > parent->data)
-    //                     {
-    //                         parent->right = leftmost;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //         return true;
-    //     }
-    //     // cout << "No Nodes Found to delete" << endl;
-    // }
+    void deleteNode(int data)
+    {
+        if (root == NULL)
+        {
+            cout << "Tree is empty, Please insert values.";
+        }
+        Node *temp = root;
+        Node *parent = NULL;
+        while (temp != NULL)
+        {
+            if (data < temp->data)
+            {
+                parent = temp;
+                temp = temp->left;
+            }
+            else if (data > temp->data)
+            {
+                parent = temp;
+                temp = temp->right;
+            }
+            else
+            {
+                if (temp->left == NULL && temp->right == NULL)
+                {
+                    cout << "--Deleting Leaf Node--" << endl;
+                    if (parent->left == temp)
+                    {
+                        parent->left = NULL;
+                    }
+                    else
+                    {
+                        parent->right = NULL;
+                    }
+                    free(temp);
+                    return;
+                }
+                else if (temp->left == NULL || temp->right == NULL)
+                {
+                    cout << "--Deleting Parent Node--" << endl;
+                    if (temp->left != NULL)
+                    {
+                        parent->left = temp->left;
+                    }
+                    else
+                    {
+                        parent->right = temp->right;
+                    }
+                    free(temp);
+                    return;
+                }
+                else
+                {
+                    cout << "--Deleting node which has two child--" << endl;
+                    Node *t = temp->right;
+                    if (t->left == NULL && t->right == NULL)
+                    {
+                        temp->data = t->data;
+                        temp->right = NULL;
+                        free(t);
+                        return;
+                    }
+                    else if (t->left == NULL && t->right != NULL)
+                    {
+                        temp->data = t->data;
+                        temp->right = t->right;
+                        free(t);
+                        return;
+                    }
+                    while (t->left != NULL)
+                    {
+                        parent = t;
+                        t = t->left;
+                    }
+                    temp->data = t->data;
+                    parent->left = NULL;
+                    free(t);
+                    return;
+                }
+            }
+        }
+        cout << "No Nodes Found to Delete" << endl;
+    }
 
     // Find particular value/data in tree
     bool lookup(int data)
