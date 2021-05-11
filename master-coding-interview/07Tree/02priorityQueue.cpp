@@ -56,6 +56,7 @@ public:
             cout << "Queue is empty, Please insert element first." << endl;
             return;
         }
+        // deleting from behind by making check on next pointer of last node
         Node *temp = first;
         while (temp->next->next != NULL)
         {
@@ -72,6 +73,7 @@ public:
             cout << "Queue is empty" << endl;
             return;
         }
+        // traversing from first element to last
         Node *temp = first;
         while (temp != NULL)
         {
