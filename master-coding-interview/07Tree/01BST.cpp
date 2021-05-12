@@ -155,6 +155,47 @@ public:
                     parent->left = NULL;
                     free(t);
                     return;
+                    /*
+The first line t = temp-> right already gives us idea that whatever number we choose to replace temp with will be greater then temp. where temp is the node we want to delete/remove.
+
+Note t is the same variable used in the first line of the code segment
+
+Also, we don't care about left children of temp afterall we have to preserve rules of BST 😉
+
+Now,
+in the first case we have something like this
+
+temp
+ /    \
+x      t
+      /  \
+   null null
+hence we have,
+t is the right child node of temp and t doesn't have any children so we take the data of t and replace with data of temp and remove t.
+
+In the second case t has only child node at the right and it can be of any number something like this
+
+temp
+ /   \
+x      t
+         \
+           a
+             \
+               blah blah
+so now in the above we are replacing temp data with t data and linking temp of right to t of right. that is temp right is pointing to a. and then free t
+
+In the last condition that is the while loop we have,
+
+temp
+ /   \
+x      t
+      /   \
+    b      a
+   /         \
+ c             blah blah
+that is there is some children nodes on the left of t so then we traverse till the last left child in this case c and the swap the data of c and temp and deleting c in this way we are still preserving the rules ofBST.
+                    
+                    */
                 }
             }
         }
