@@ -3,6 +3,7 @@ using namespace std;
 
 int fact(int n)
 {
+    // base case
     if (n < 0)
     {
         return 0;
@@ -11,6 +12,7 @@ int fact(int n)
     {
         return 1;
     }
+    // recursive case
     else
     {
         // fact(5) = 5*4*3*2*1
