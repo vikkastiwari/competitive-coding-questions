@@ -30,11 +30,14 @@ int Partition(int arr[], int lowerIndex, int upperIndex)
 
 int quickSort(int arr[], int lowerIndex, int upperIndex)
 {
-    int pindex; // pivot index
+    int pindex; // partition index
     if (lowerIndex < upperIndex)
     {
         pindex = Partition(arr, lowerIndex, upperIndex);
-        quickSort(arr, lowerIndex, pindex - 1); // Recursively calling function
+        // Recursively calling function
+        // Left array
+        quickSort(arr, lowerIndex, pindex - 1); 
+        // Right array
         quickSort(arr, pindex + 1, upperIndex);
     }
     return 0;
