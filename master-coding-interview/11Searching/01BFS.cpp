@@ -1,5 +1,5 @@
 /*
-Breadth first search(BFS)
+Breadth first search(BFS) - cyclic, unweighted, bidirectional
 
 Graph
 0->[1,3]
