@@ -17,6 +17,8 @@ void rearrange(int arr[], int n)
             pos++;
         }
     }
+    cout << neg << endl;
+    cout << pos << endl;
     vector<int> arr1(neg);
     vector<int> arr2(pos);
     for (int i = 0; i < n; i++)
@@ -25,7 +27,7 @@ void rearrange(int arr[], int n)
         {
             arr2[i] = arr[i];
         }
-        if (arr[i] < 0)
+        else
         {
             arr1[i] = arr[i];
         }
