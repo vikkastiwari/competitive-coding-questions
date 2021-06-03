@@ -3,53 +3,68 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// we cant use extra space either we would have seperated values in two arrays +Ve , -ve respectively and arranged them accordingly.
+// space = O(1) and this code do not maitain the order
+
 void rearrange(int arr[], int n)
 {
-    int pos = 0, neg = 0;
-    for (int i = 0; i < n; i++)
+    int i = 0, j = n - 1;
+    // arr=[all +ve, all -ve];
+    while (i <= j)
     {
-        if (arr[i] < 0)
+        if (arr[i] < 0 && arr[j] > 0)
         {
-            neg++;
+            swap(arr[i], arr[j]);
+            i++;
+            j--;
         }
-        else
+        else if (arr[i] > 0 && arr[j] < 0)
         {
-            pos++;
+            i++;
+            j--;
+        }
+        else if (arr[i] > 0)
+        {
+            i++;
+        }
+        else if (arr[j] < 0)
+        {
+            j--;
         }
     }
-    cout << neg << endl;
-    cout << pos << endl;
-    vector<int> arr1(neg);
-    vector<int> arr2(pos);
-    for (int i = 0; i < n; i++)
+    cout << i << endl;
+    // i==0 indicates all negative - after
+    // i==n indicates all positive - before
+    if (i == 0 || i == n)
     {
-        if (arr[i] >= 0)
+        for (int i = 0; i < n; i++)
         {
-            arr2[i] = arr[i];
-        }
-        else
-        {
-            arr1[i] = arr[i];
+            cout << arr[i] << " ";
         }
     }
+    else
+    {
+        int k = 0;
+        // i is the start of negative values in array
 
-    for (int i = 0; i < arr1.size(); i++)
-    {
-        cout << arr1[i] << " ";
-    }
-    cout << endl;
-
-    for (int i = 0; i < arr2.size(); i++)
-    {
-        cout << arr2[i] << " ";
+        while (k < n && i < n)
+        {
+            swap(arr[k], arr[i]);
+            k += 2;
+            i++;
+        }
+        for (int i = 0; i < n; i++)
+        {
+            cout << arr[i] << " ";
+        }
     }
 }
 
 int main()
 {
     int arr[] = {1, 2, 3, -4, -1, 4};
-    int n = 5;
-    sort(arr, arr + n);
+    int n = 6;
     rearrange(arr, n);
+
     return 0;
 }
