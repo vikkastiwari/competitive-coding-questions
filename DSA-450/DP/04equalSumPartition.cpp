@@ -36,8 +36,9 @@ int subsetSum(int a[], int n)
     {
         for (int j = 1; j < sum + 1; j++)
         {
-            if (a[i - 1] <= sum)
+            if (a[i - 1] <= j)
             {
+                // OR because we don't have to count total possibilities
                 t[i][j] = t[i - 1][j - a[i - 1]] || t[i - 1][j];
             }
             else
@@ -55,7 +56,8 @@ int subsetSum(int a[], int n)
 
 int main()
 {
-    int w[] = {1, 5, 5, 11, 3, 3};
+    int w[] = {1, 5, 5, 11};
+    //s1={1,5,5} + s2={11}
     int n = sizeof(w) / sizeof(w[0]);
     cout << subsetSum(w, n) << endl;
     return 0;
