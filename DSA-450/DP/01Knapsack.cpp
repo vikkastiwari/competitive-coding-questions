@@ -15,7 +15,7 @@ int knapsack(int w[], int v[], int m, int n)
         {
             if (w[i - 1] > m)
             {
-                return t[i][j] = t[i - 1][j];
+                t[i][j] = t[i - 1][j];
             }
             else
             {

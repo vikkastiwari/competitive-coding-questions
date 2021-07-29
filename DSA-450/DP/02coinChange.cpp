@@ -20,14 +20,14 @@ int coinChange(int a[], int k, int n)
         }
     }
 
-    for (int i = 0; i < n + 1; i++)
-    {
-        for (int j = 0; j < k + 1; j++)
-        {
-            cout << t[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for (int i = 0; i < n + 1; i++)
+    // {
+    //     for (int j = 0; j < k + 1; j++)
+    //     {
+    //         cout << t[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
     // i is n and j in M
     for (int i = 1; i < n + 1; i++)
@@ -36,7 +36,7 @@ int coinChange(int a[], int k, int n)
         {
             if (a[i - 1] > k)
             {
-                return t[i][j] = t[i - 1][j];
+                t[i][j] = t[i - 1][j];
             }
             else
             {
@@ -52,7 +52,7 @@ int main()
 {
     int a[] = {1, 2, 3};
     int n = sizeof(a) / sizeof(a[0]);
-    int k = 5;
+    int k = 7;
     cout << coinChange(a, k, n);
     return 0;
 }
