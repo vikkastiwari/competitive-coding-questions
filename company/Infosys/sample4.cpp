@@ -13,7 +13,6 @@ int main()
             cin >> path[i][j];
         }
     }
-
     int max_prev = max(path[0][0], path[0][1]);
     int min_prev = max(path[0][0], path[0][1]);
     int count = max_prev;
