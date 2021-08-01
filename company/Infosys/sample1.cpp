@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int maxKill(int power[], int bonus[], int e, int n)
 {
     vector<pair<int, int>> mons;

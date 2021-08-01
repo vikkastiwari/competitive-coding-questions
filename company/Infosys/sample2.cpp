@@ -7,7 +7,6 @@ int main()
     cin >> n;
     long k;
     cin >> k;
-
     vector<vector<long>> pairs;
     int j = 0;
     set<int> temp;

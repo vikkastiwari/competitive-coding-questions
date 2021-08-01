@@ -16,7 +16,7 @@ int main()
     {
         if (a[i] < a[i + 1] && ((a[i] & a[i + 1]) * 2 < (a[i] | a[i + 1])))
         {
-            // cout << a[i] << " " << a[i + 1] << endl;
+             // cout << a[i] << " " << a[i + 1] << endl;
             count += 1;
             if (count > max)
             {
