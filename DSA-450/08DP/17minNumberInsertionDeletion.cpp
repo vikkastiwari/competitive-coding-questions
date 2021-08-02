@@ -78,9 +78,17 @@ int LCS(string s1, string s2, int n, int m)
     return t[n][m];
 }
 
+int minInsertDelete(string s1, string s2)
+{
+    int lcs = LCS(s1, s2, s1.length(), s2.length());
+    cout << "Delete from s1:" << s1.length() - lcs << endl;
+    cout << "Insert in s1:" << s2.length() - lcs << endl;
+    return lcs;
+}
+
 int main()
 {
-    string s1 = "vikas", s2 = "viksa";
-    cout << LCS(s1, s2, s1.length(), s2.length()) << endl;
+    string s1 = "aggtab", s2 = "gxtxayb";
+    cout << minInsertDelete(s1, s2) << endl;
     return 0;
 }

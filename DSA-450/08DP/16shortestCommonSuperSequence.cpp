@@ -78,9 +78,16 @@ int LCS(string s1, string s2, int n, int m)
     return t[n][m];
 }
 
+int superSequence(string s1, string s2)
+{
+    int lcs = LCS(s1, s2, s1.length(), s2.length());
+    int totalLen = s1.length() + s2.length();
+    return totalLen - lcs;
+}
+
 int main()
 {
-    string s1 = "vikas", s2 = "viksa";
-    cout << LCS(s1, s2, s1.length(), s2.length()) << endl;
+    string s1 = "aggtab", s2 = "gxtxayb";
+    cout << superSequence(s1, s2) << endl;
     return 0;
 }
