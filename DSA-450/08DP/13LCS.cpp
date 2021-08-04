@@ -25,7 +25,7 @@ using namespace std;
 // int LCS(string s1, string s2, int n, int m)
 // {
 
-//     int t[n + 1][m + 1];
+//     int t[n + 1][m + 1]; // dont initialize it here
 //     memset(t, -1, sizeof(t));
 //     if (n == 0 || m == 0)
 //         return 0;
