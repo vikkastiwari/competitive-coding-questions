@@ -21,11 +21,8 @@ int fibo(int n)
     if (n == 0 || n == 1)
         return n;
 
-    for (int i = 0; i < n + 1; i++)
-    {
-        if (i == 0 || i == 1)
-            t[i] = i;
-    }
+    t[0] = 0;
+    t[1] = 1;
 
     for (int i = 2; i < n + 1; i++)
     {
@@ -36,7 +33,7 @@ int fibo(int n)
 
 int main()
 {
-    int n = 7;
+    int n = 12;
     // memset(t, -1, sizeof(t)); // for bottom up approach
     for (int i = 0; i < n; i++)
     {
