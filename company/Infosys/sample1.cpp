@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
+const ll m = 1e9 + 7;
+
 int maxKill(int power[], int bonus[], int e, int n)
 {
     vector<pair<int, int>> mons;
