@@ -1,36 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define N 1001
+
+int MaximumPath(int Mat[][N])
+{
+    int result = 0;
+    int dp[N][N + 2];
+
+    memset(dp, 0, sizeof(dp));
+
+    for (int i = 0; i < N; i++)
+        dp[0][i + 1] = Mat[0][i];
+
+    for (int i = 1; i < N; i++)
+    {
+        for (int j = 1; j <= N; j++)
+        {
+            dp[i][j] = max(dp[i - 1][j - 1],
+                           max(dp[i - 1][j],
+                               dp[i - 1][j + 1])) +
+                       Mat[i][j - 1];
+        }
+    }
+
+    for (int i = 0; i <= N; i++)
+        result = max(result, dp[N - 1][i]);
+
+    return result;
+}
 
 int main()
 {
-    int n;
-    cin >> n;
-    int path[n][2];
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < 2; j++)
-        {
-            cin >> path[i][j];
-        }
-    }
-    int max_prev = max(path[0][0], path[0][1]);
-    int min_prev = max(path[0][0], path[0][1]);
-    int count = max_prev;
-    for (int i = 1; i < n; i++)
-    {
-        int max_next = max(path[i][0], path[i][1]);
-        int min_next = min(path[i][0], path[i][1]);
+    int Mat[N][N] = {{1, 1},
+                     {2, 2},
+                     {3, 3}};
 
-        int max_min = max(max_prev + max_next, max_prev + min_next);
-        int min_max = max(min_prev + max_next, min_prev + min_next);
-        if ()
-            break;
-        if (max(path[i][0], path[i][1]) > prev)
-        {
-            prev = max(path[i][0], path[i][1]);
-            count += prev;
-        }
-    }
-    cout << count << endl;
+    cout << MaximumPath(Mat) << endl;
     return 0;
 }
