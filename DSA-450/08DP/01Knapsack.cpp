@@ -13,13 +13,13 @@ int knapsack(int w[], int v[], int m, int n)
     {
         for (int j = 1; j < m + 1; j++)
         {
-            if (w[i - 1] > m)
+            if (w[i - 1] > j)
             {
                 t[i][j] = t[i - 1][j];
             }
             else
             {
-                t[i][j] = max(v[n - 1] + t[i - 1][j - w[i - 1]], t[i - 1][j]);
+                t[i][j] = max(v[i - 1] + t[i - 1][j - w[i - 1]], t[i - 1][j]);
             }
         }
     }
