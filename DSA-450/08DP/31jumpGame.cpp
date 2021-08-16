@@ -1,4 +1,5 @@
 // https://www.interviewbit.com/problems/jump-game-array/
+
 #include <bits/stdc++.h>
 using namespace std;
 
