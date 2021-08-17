@@ -11,7 +11,7 @@ bool solve(string x, string y)
         return false;
 
     int n = x.length();
-    for (int i = 1; i < n - 1; i++)
+    for (int i = 1; i <= n - 1; i++)
     {
         bool cond1 = (solve(x.substr(0, i), y.substr(n - i, i))) && (solve(x.substr(i, n - i), y.substr(0, n - i)));
 
