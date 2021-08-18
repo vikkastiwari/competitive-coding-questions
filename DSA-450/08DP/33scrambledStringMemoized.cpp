@@ -28,6 +28,7 @@ bool solve(string x, string y)
     int flag = false;
     for (int i = 1; i <= n - 1; i++)
     {
+        // substr(start,len)
         bool cond1 = (solve(x.substr(0, i), y.substr(n - i, i))) && (solve(x.substr(i), y.substr(0, n - i)));
 
         bool cond2 = (solve(x.substr(0, i), y.substr(0, i))) && (solve(x.substr(i, n - i), y.substr(i, n - i)));
