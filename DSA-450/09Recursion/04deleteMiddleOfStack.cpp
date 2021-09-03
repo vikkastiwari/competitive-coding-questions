@@ -26,9 +26,13 @@ stack<int> del(stack<int> &st, int size)
 
 void print(stack<int> &st)
 {
-    cout << st.top() << " ";
+    if (st.empty())
+        return;
+    int temp = st.top();
     st.pop();
+    cout << temp << " ";
     print(st);
+    st.push(temp);
 }
 
 int main()
