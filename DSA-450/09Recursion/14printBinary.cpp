@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//Print N-bit binary numbers having more 1’s than 0’s for any prefix
 void solve(int one, int zero, int n, string op)
 {
     if (n == 0)
