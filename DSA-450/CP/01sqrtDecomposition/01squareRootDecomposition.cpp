@@ -3,6 +3,20 @@ using namespace std;
 #define int long long
 const int N = 1e5 + 2, mod = 1e9 + 7;
 
+/*
+i/p -
+9
+1 5 -2 6 8 -7 2
+1 11
+2
+1 6
+2 7
+
+o/p-
+11
+12
+*/
+
 signed main()
 {
     int n;
