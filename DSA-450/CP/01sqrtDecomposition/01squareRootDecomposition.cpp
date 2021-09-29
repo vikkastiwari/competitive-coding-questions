@@ -11,8 +11,8 @@ signed main()
     for (int i = 0; i < n; i++)
         cin >> v[i];
 
-    int len = sqrtl(n) + 1;
-    vector<int> b(len); // for precomputation - we will store sum of intervals based on len calculated
+    int len = sqrtl(n) + 1; // convert len to ceil value
+    vector<int> b(len);     // for precomputation - we will store sum of intervals based on len calculated
 
     for (int i = 0; i < n; i++)
     {
@@ -31,12 +31,13 @@ signed main()
         int sum = 0;
         for (int i = l; i <= r;)
         {
+            // considering sum from precomputed values
             if (i % len == 0 && i + len - 1 <= r)
             {
                 sum += b[i / len];
                 i += len;
             }
-            else
+            else // considering values paritially from array for sum in given range
             {
                 sum += v[i];
                 i++;
