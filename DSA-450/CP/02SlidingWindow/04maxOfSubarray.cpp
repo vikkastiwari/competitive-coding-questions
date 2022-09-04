@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// Fixed sized sliding window
 class Solution
 {
   public:
