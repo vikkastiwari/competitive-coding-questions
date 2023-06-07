@@ -126,8 +126,88 @@ void pattern9(){
     }
 }
 
+/*
+
+1      1
+12    21
+123  321
+12344321
+
+*/ 
+void pattern10(){
+    int n = 5;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout << j;
+        }
+        for(int j=1;j<=2*(n-1);j++){
+            // wrong output
+            cout << " "; 
+        }
+        for(int j=i;j>=1;j--){
+            cout<<j;
+        }
+        cout << endl;
+    }
+}
+
+void pattern11(){
+    int n = 5;
+    int val = 1;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout << val++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pattern12(){
+    int n = 5;
+    for(int i=1;i<=n;i++){
+        char val = 'A';
+        for(int j=1;j<=i;j++){
+            cout << val++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pattern13(){
+    int n = 5;
+    for(int i=n;i>=1;i--){
+        char val = 'A';
+        for(int j=1;j<=i;j++){
+            cout << val++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pattern14(){
+    int n = 5;
+    for(int i=n;i>=1;i--){
+        char val = 'A';
+        for(int j=1;j<=i;j++){
+            cout << val++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pattern15(){
+    int n = 5;
+    char val = 'A';
+    for(int i=0;i<n;i++){
+        for(int j=n-i-1;j<=n-1;j++){
+            cout << char(65+j);
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {   
-    pattern9();
+    pattern15();
     return 0;
 }
