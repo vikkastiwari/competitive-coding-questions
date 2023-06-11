@@ -46,6 +46,20 @@ int fib(int n){
     return fib(n-1) + fib(n-2);
 }
 
+void reverseStr(string s, int start, int end){
+    if(start>=end) return;
+    swap(s[start],s[end]);
+    reverseStr(s,start+1,end-1);
+}
+
+void palindrome(string s){
+    string rev = s;
+    reverseStr(rev,0,rev.length()-1);
+    cout << s << endl;
+    if(rev == s) cout << "Plaindrome" << endl;
+    else cout << "Not Palindrome" << endl;
+}
+
 int main(){
     // int arr[] = {1,2,3,4,5};
     // reverse(arr,0,(sizeof(arr) / sizeof(arr[0]))-1);
@@ -56,5 +70,7 @@ int main(){
         cout << fib(i) << endl;
         i++;
     }
+
+    palindrome("ABCBA");
     return 0;
 }
