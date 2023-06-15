@@ -24,6 +24,10 @@ void selection_sort(int arr[], int n) {
 }
 */ 
 
+/*
+*   Best, Avg & Worst TC: O(N^2)
+*/
+
 int min(int arr[], int start, int n){
     int min = arr[start];
     int currentMinId = -1;
