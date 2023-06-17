@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-*   Best TC: O(N)
-*   Avg & Worst TC: O(N^2)
-*/
 void insertionSort(int arr[],int currentId, int n){
     
     if(currentId > n-1) return;

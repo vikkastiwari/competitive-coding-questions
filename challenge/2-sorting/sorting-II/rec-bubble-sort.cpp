@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-*   Best TC: O(N)
-*   Avg & Worst TC: O(N^2)
-*/
-
 void recBubbleSort(int arr[], int start, int n){
     if(n==1) return;
     while(arr[start]>arr[start+1]){
