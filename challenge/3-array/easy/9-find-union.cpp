@@ -42,6 +42,15 @@ void findUnionSol1(vector<int> nums1, vector<int> nums2)
 
 }
 
+/**
+ * @brief We assumed that vectors are already in sorted order for this approach.
+ * Hence we reduced the complexity from O((m+n)log(m+n)) to O(m+n)
+ * Time Complexity: O(m+n)
+ * Space Complexity : O(m+n)
+ * @param nums1 
+ * @param nums2 
+ */
+
 void findUnionSol2(vector<int> nums1, vector<int> nums2){
     vector<int> unionn = {};
     int n;
