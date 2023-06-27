@@ -51,7 +51,6 @@ void findMissingSol2(vector<int> nums){
  * Space Complexity: O(1)
  * 
  * 1. Summation approach
- * 2. XOR(^) approach
  */
 void findMissingSol3(vector<int> nums){
     int sum1 = 0, sum2 = 0;
@@ -61,6 +60,18 @@ void findMissingSol3(vector<int> nums){
         sum1 += nums[i];
     }
     cout << sum2 - sum1;
+}
+
+/**
+ * 2. XOR(^) approach
+ */
+void findMissingSol4(vector<int> nums){
+    int xor1 = 0, xor2 = 0;
+    for(int i=0;i<nums.size();i++){
+        xor1 ^= nums[i];
+        xor2 ^= i;
+    }
+    cout << (xor1^xor2^nums.size());
 }
 
 int main(){
