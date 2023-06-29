@@ -64,6 +64,12 @@ void longestSubarraySumK2(vector<int> nums, int K){
     cout << maxLen;
 }
 
+/**
+ * @brief more optimal solution for array that contains only +ves 
+ */
+void longestSubarraySumK3(vector<int> nums, int K){
+}
+
 int main(){
     vector<int> nums;
     int K = 3;
