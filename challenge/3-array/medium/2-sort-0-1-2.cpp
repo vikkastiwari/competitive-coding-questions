@@ -39,9 +39,48 @@ void customSort2(vector<int> nums){
     cout << endl;
 }
 
+/**
+ * @brief Dutch National Flag Algo
+ * Thought Process: put zeros to extreme left, 2 to extreme right and 1 in between of 0 and 2
+ * 
+ * TC: O(N)
+ * SC: O(1)
+ * 
+ * @param nums 
+ * @return * void 
+ */
+
+/**
+ * @note Diagram to visualise
+ * 
+ * pointer     0      low-1   low      mid-1  mid    high   high+1     n-1
+ * array       0   0    0      1   1     1     unsorted        2    2   2
+ *          
+ */
+void customSort3(vector<int> nums){
+    int n = nums.size();
+    int low = 0, mid = 0, high = n - 1;
+    while(low < n && mid <= high && high >= 0){
+        if(nums[mid] == 0){
+            swap(nums[low],nums[mid]);
+            low++;
+            mid++;
+        } else if(nums[mid]==1) {
+            mid++;
+        }else if(nums[mid]==2){
+            swap(nums[mid],nums[high]);
+            high--;
+        }
+    }
+    for(int i=0;i<nums.size();i++){
+        cout << nums[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     vector<int> arr = {2, 0, 2, 1, 1, 0};
-    customSort2(arr);
+    customSort3(arr);
     return 0;
 }
