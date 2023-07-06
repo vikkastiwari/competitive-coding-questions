@@ -17,7 +17,6 @@ int buySellStocks(vector<int>& nums) {
     return profit;
 }
 
-
 int main()
 {
     vector<int> n = {7,1,5,3,6,4};
