@@ -34,7 +34,7 @@ vector<vector<int>> permute(vector<int>& nums) {
 int main(){
     vector<int> n = {1,3,2};
     vector<vector<int>> ans =  permute(n);
-    int pos = -1;
+    int pos = 0; // if no next combination is found then will return first one in order
     sort(ans.begin(), ans.end());
     for(int i=0;i<ans.size();i++){
         int count = 0;
