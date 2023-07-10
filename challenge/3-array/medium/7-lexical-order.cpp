@@ -32,7 +32,8 @@ vector<vector<int>> permute(vector<int>& nums) {
 }
 
 int main(){
-    vector<int> n = {1,3,2};
+    vector<int> n = {3,2,1};
+    // vector<int> n = {1,3,2};
     vector<vector<int>> ans =  permute(n);
     int pos = 0; // if no next combination is found then will return first one in order
     sort(ans.begin(), ans.end());
@@ -42,15 +43,15 @@ int main(){
             if(ans[i][j] == n[j]){
                 count++;
             }
-            if(count == ans[i].size()){
+            if(count == ans[i].size() && i+1 < ans.size()){
                 pos = i+1;
                 break;
             }
         }
     }
     for(int i=0;i<ans.size();i++){
-        for(int j=0;j<ans[i].size();j++){
-            if(pos == i){
+        if(pos == i){
+            for(int j=0;j<ans[i].size();j++){
                 cout << ans[i][j] << " ";
             }
         }
