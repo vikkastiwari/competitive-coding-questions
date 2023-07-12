@@ -28,13 +28,22 @@ void leaderInArray1(vector<int>& nums) {
     cout << endl;
 }
 
+void printLeaders(vector<int> arr) {
+    int n = arr.size();
+    int max = arr[n - 1];
+    cout << arr[n-1] << " ";
+
+    for (int i = n - 2; i >= 0; i--){
+        if (arr[i] > max) {
+        cout << arr[i] << " ";
+        max = arr[i];
+        }
+    }
+}
+
 int main(){
     // vector<int> n = {1,3,2};
     vector<int> n = {10, 22, 12, 3, 0, 6};
     leaderInArray1(n);
-    // for(int i=0;i<n.size();i++){
-    //     cout << n[i] << " "; 
-    // }
-    // cout << endl;
     return 0;
 }
