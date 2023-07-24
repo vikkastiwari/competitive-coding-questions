@@ -22,12 +22,17 @@ void leaderInArray1(vector<int>& nums) {
                 leader = -1;
             }
         }
+        // count check validates that all element after leader are smaller
         if(count == nums.size()-1-i && leader!=-1)
             cout << leader << " ";
     }
     cout << endl;
 }
 
+/**
+ * @brief optimal approach
+ * TC: O(N)
+ */
 void printLeaders(vector<int> arr) {
     int n = arr.size();
     int max = arr[n - 1];
@@ -35,15 +40,16 @@ void printLeaders(vector<int> arr) {
 
     for (int i = n - 2; i >= 0; i--){
         if (arr[i] > max) {
-        cout << arr[i] << " ";
-        max = arr[i];
+            cout << arr[i] << " ";
+            max = arr[i];
         }
     }
 }
 
 int main(){
     // vector<int> n = {1,3,2};
-    vector<int> n = {10, 22, 12, 3, 0, 6};
-    leaderInArray1(n);
+    vector<int> n = {4,7,1,0};
+    // vector<int> n = {10, 22, 12, 3, 0, 6};
+    printLeaders(n);
     return 0;
 }
