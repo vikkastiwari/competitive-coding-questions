@@ -24,6 +24,14 @@ void longConsecutiveSeq(vector<int> arr) {
     cout << maxlen << endl;
 }
 
+/**
+ * @brief optimal approach
+ * TC: O(2*N)
+ * SC: O(N)
+ * 
+ * @param arr 
+ * @return * void 
+ */
 void longConsecutiveSeq2(vector<int> arr){
     if(arr.size() == 0) return;
     unordered_set<int> set;
