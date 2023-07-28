@@ -15,8 +15,8 @@ void spiralMatrix(vector < vector < int >> & matrix) {
 
     int top = 0; // traversing col, row wise - top to bottom 
     int left =0; // traversing row, col wise - left to right
-    int right = n-1; // traversing row, col wise - right to left
-    int bottom = m-1; // traversing col, row wise  - bottom to top
+    int right = m-1; // traversing row, col wise - right to left
+    int bottom = n-1; // traversing col, row wise  - bottom to top
 
     //printing in spiral form
     while(top<=bottom && left <= right){
