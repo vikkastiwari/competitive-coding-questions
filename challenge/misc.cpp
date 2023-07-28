@@ -41,13 +41,13 @@ void printPattern2(int n){
     }
 }
 
-int powerNum(int n, int k, int ans){
-    while(k>0){
-        ans = ans*n;
-        k--;
-        powerNum(n,k,ans); 
-    }
-    return ans;
+int powerNum(int n, int k){
+    if(n==0) return 0;
+    if(k==0) return 1;
+    
+    int halfHolder = powerNum(n,k/2);
+    int tempRes = halfHolder*halfHolder;
+    return k%2==0 ? tempRes : n*tempRes;
 }
 
 int removeOdd(vector<int> &arr){
@@ -71,14 +71,14 @@ int removeOdd(vector<int> &arr){
 int main()
 {
     int n = 2;
-    int k = 3;
+    int k = 5;
     // vector<int> arr = {4,1,2,2,5,8,1,0,3,9,6};
     vector<int> arr = {4,2,2,8,1};
-    // cout << powerNum(n,k,1) << endl;
-    int oddCount = arr.size() - removeOdd(arr);
-    for(int i=0;i<arr.size()-oddCount;i++){
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    cout << powerNum(n,k) << endl;
+    // int oddCount = arr.size() - removeOdd(arr);
+    // for(int i=0;i<arr.size()-oddCount;i++){
+    //     cout << arr[i] << " ";
+    // }
+    // cout << endl;
     return 0;
 }
