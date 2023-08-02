@@ -13,7 +13,13 @@ int nCr(int n, int r) {
     return (int)(res);
 }
 
-vector<vector<int>> pascalTriangle(int n) {
+/**
+ * @brief brute force approach
+ * TC: ~ O(n*n*r) ~ O(n^3)
+ * SC: using ans to return and not compute so we can neglect it
+ * 
+ */
+vector<vector<int>> pascalTriangleNaive(int n) {
     vector<vector<int>> ans;
 
     for (int row = 1; row <= n; row++) {
@@ -26,15 +32,43 @@ vector<vector<int>> pascalTriangle(int n) {
     return ans;
 }
 
+/**
+ * @brief Optimal approach
+ * TC: O(n^2)
+ * SC: O(1)
+ * 
+ */
+void printRow(int row){
+    long long ans = 1;
+    cout << ans << " "; // printing 1st element
+
+    for (int i = 1; i < row; i++) {
+        ans = ans * (row - i);
+        ans = ans / i;
+        cout << ans << " ";
+    }
+    cout << endl;
+}
+
+void pascalTriangleOptimal(int row){
+    for(int i=1;i<=row;i++){
+        printRow(i);
+    }
+}
+
 int main()
 {
     int n = 5;
-    vector<vector<int>> ans = pascalTriangle(n);
-    for (auto itr : ans) {
-        for (auto el : itr) {
-            cout << el << " ";
-        }
-        cout << endl;
-    }
+    // naive
+    // vector<vector<int>> ans = pascalTriangleNaive(n);
+    // for (auto itr : ans) {
+    //     for (auto el : itr) {
+    //         cout << el << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    // optimal
+    pascalTriangleOptimal(n);
     return 0;
 }
