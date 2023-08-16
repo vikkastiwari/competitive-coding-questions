@@ -68,17 +68,35 @@ int removeOdd(vector<int> &arr){
     return i;
 }
 
+void pushZerosToEnd(vector<int> &arr, int n) {
+	    // code here
+	
+	    int start = 0;
+	    int end = 1;
+	    while(end<n){
+	        if(arr[start] == 0 && arr[end] != 0){
+	            swap(arr[start],arr[end]);
+	            start++;
+	            end++;
+	        }
+	        while(arr[start] != 0) start++;
+	        while(arr[end]==0) end++;
+	    }
+}
+
 int main()
 {
     int n = 2;
     int k = 5;
     // vector<int> arr = {4,1,2,2,5,8,1,0,3,9,6};
-    vector<int> arr = {4,2,2,8,1};
-    cout << powerNum(n,k) << endl;
+    // vector<int> arr = {4,2,2,8,1};
+    // cout << powerNum(n,k) << endl;
+    vector<int> ar = {1,0,3,0,0,4,0,0,2,4,0,53,0,2,42};
+    pushZerosToEnd(ar,ar.size());
     // int oddCount = arr.size() - removeOdd(arr);
-    // for(int i=0;i<arr.size()-oddCount;i++){
-    //     cout << arr[i] << " ";
-    // }
-    // cout << endl;
+    for(int i=0;i<ar.size();i++){
+        cout << ar[i] << " ";
+    }
+    cout << endl;
     return 0;
 }
