@@ -13,7 +13,7 @@ int binarySearch(vector<int> arr,int low, int high, int target){
 
 /**
  * @brief binary search recursive approach
- * TC: O(logn) - if we get sorted array
+ * TC: O(logn)
  * SC: O(1)
  * 
  * @param arr 
@@ -21,13 +21,12 @@ int binarySearch(vector<int> arr,int low, int high, int target){
  * @return * void 
  */
 void findTarget(vector<int> arr, int target){
-    sort(arr.begin(),arr.end());
     cout << binarySearch(arr,0,arr.size()-1,target) << endl;
 }
 
 int main(){
     vector<int> arr = { 3, 4, 6, 7, 9, 12, 16, 17 };
-    int target = 31;
+    int target = 9;
     findTarget(arr,target);
     return 0;
 }
