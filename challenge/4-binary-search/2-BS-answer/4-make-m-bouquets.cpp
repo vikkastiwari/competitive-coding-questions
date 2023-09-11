@@ -73,6 +73,7 @@ int makeMBouquets(vector<int> arr, int m, int k) {
  */
 int makeMBouquets2(vector<int> arr, int m, int k) {
     long long val = m * 1ll * k * 1ll;
+    
     if(arr.size() < val) return -1;
 
     int maxDays = findMax(arr);
