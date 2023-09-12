@@ -94,9 +94,9 @@ int makeMBouquets2(vector<int> arr, int m, int k) {
 int main(){
     // vector<int> arr = {7, 7, 7, 7, 13, 11, 12, 7}; // rose will bloom on the ‘arr[i]th’ day
     // int m = 2, k = 3; // m - number of bouquets, k - number of roses in each bouquet
-    vector<int> arr = {  97, 83 }; // rose will bloom on the ‘arr[i]th’ day
+    vector<int> arr = {  83,98 }; // rose will bloom on the ‘arr[i]th’ day
     int m = 2, k = 1; // m - number of bouquets, k - number of roses in each bouquet
-    int ans = makeMBouquets(arr, m, k);
-    cout << arr[ans] << endl;
+    int ans = makeMBouquets2(arr, m, k);
+    cout << ans << endl;
     return 0;
 }
