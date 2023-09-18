@@ -51,10 +51,32 @@ int kthMissingNumberB2(vector<int> arr, int k) {
     return k;
 }
 
+/**
+ * @brief binary search optimised using maths
+ * TC: O(logn)
+ * SC:O(1)
+ * 
+ */
+int kthMissingNumberO(vector < int > vec, int k) {
+    int n = vec.size();
+    int low = 0, high = n - 1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        int missing = vec[mid] - (mid + 1);
+        if (missing < k) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return k + high + 1;
+}
+
 int main(){
     vector<int> arr = { 1,2,3,4 }; 
     int k = 1; // kth missing number
-    int ans = kthMissingNumberB2(arr, k);
+    int ans = kthMissingNumberO(arr, k);
     cout << ans << endl;
     return 0;
 }
