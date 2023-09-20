@@ -18,7 +18,6 @@ bool canWePlaceCows(vector <int> stalls, int k, int dist){
             cntCows++;
             lastVisitedStall = stalls[i];
         }
-
         // The cows are placed with given dist
         if(cntCows >= k){
             return true;
