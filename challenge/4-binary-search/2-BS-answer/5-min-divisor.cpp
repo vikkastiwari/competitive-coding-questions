@@ -16,7 +16,7 @@ bool possible(vector<int> arr, int divisor, int limit){
 
 /**
  * @brief Bruteforce approach where we iterate from 1 to maxDays
- * TC: O(n)
+ * TC: O(n*max(arr))
  * SC:O(1)
  * 
  * @param arr 

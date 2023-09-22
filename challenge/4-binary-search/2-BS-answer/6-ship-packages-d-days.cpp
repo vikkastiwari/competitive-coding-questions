@@ -34,7 +34,7 @@ int findDays(vector<int> weights, int capacity){
 
 /**
  * @brief Bruteforce approach 
- * TC: O(n)
+ * TC: O(N * (sum(arr[])-max(arr[])+1))
  * SC:O(1)
  * 
  * @param arr 

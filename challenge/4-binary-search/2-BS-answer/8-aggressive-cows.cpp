@@ -28,7 +28,7 @@ bool canWePlaceCows(vector <int> stalls, int k, int dist){
 
 /**
  * @brief binary search optimised
- * TC: O(nlogn)
+ * TC: O(nlogn) - we are doing sorting too
  * SC:O(1)
  * 
  */
