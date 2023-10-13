@@ -43,6 +43,7 @@ string largestOddNumber(string num) {
 
 int main(){
     string s = "35427";
+    // string s = "7542351161"; // value that is giving error in first logic
     string res = largestOddNumber(s);
     cout << res << endl;
     return 0;
