@@ -84,6 +84,55 @@ void pushZerosToEnd(vector<int> &arr, int n) {
 	    }
 }
 
+#include <iostream>
+#include <string>
+
+std::string removeConsecutiveCharacters(const std::string& input, int consecutiveLength) {
+    if (consecutiveLength <= 1) {
+        return input; // Nothing to remove if consecutive length is less than or equal to 1.
+    }
+
+    std::string result;
+    int count = 1;
+    char prev = input[0];
+
+    for (size_t i = 1; i < input.size(); ++i) {
+        if (input[i] == prev) {
+            count++;
+        } else {
+            if (count != consecutiveLength) {
+                result += std::string(count, prev);
+            }
+            count = 1;
+            prev = input[i];
+        }
+    }
+
+    // Check for the last character group
+    if (count != consecutiveLength) {
+        result += std::string(count, prev);
+    }
+
+    return result;
+}
+
+int main() {
+    std::string input;
+    int consecutiveLength;
+
+    std::cout << "Enter a string: ";
+    std::cin >> input;
+
+    std::cout << "Enter the consecutive length to remove: ";
+    std::cin >> consecutiveLength;
+
+    std::string result = removeConsecutiveCharacters(input, consecutiveLength);
+    std::cout << "Result: " << result << std::endl;
+
+    return 0;
+}
+
+
 int main()
 {
     int n = 2;

@@ -37,3 +37,7 @@ settings.json
 **/DSA/
 **/big-o-cs/
 **/playground.cpp
+
+challenge/sm.html
+challenge/spiral.html
+challenge/string tuncate.html
