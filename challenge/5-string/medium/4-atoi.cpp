@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/**
+ * @brief  String to Integer (atoi)
+ * 
+ * @param str 
+ * @return * int 
+ */
 int myAtoi(string str)
 {
     int res = 0;
